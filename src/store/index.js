@@ -27,7 +27,7 @@ const counterSlice = createSlice({
       state.counter--;
     },
     increase(state, action) {
-      state.counter = state.counter + action.amount;
+      state.counter = state.counter + action.payload;
     },
     toggle(state) {
       state.showCounter = !state.showCounter;
@@ -37,5 +37,8 @@ const counterSlice = createSlice({
 
 // In case of multiple reducers, they can be merged in configureStore
 const store = configureStore({ reducer: counterSlice.reducer });
+
+// It has the unique identifiers, we don't need to
+export const counterActions = counterSlice.actions;
 
 export default store;
