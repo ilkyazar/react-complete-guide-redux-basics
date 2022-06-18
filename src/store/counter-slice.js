@@ -30,4 +30,7 @@ const counterSlice = createSlice({
   },
 });
 
-export default counterSlice;
+// It has the unique identifiers, we don't need to
+export const counterActions = counterSlice.actions;
+
+export default counterSlice.reducer;
